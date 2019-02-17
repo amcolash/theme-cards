@@ -34,13 +34,14 @@
     <script>
       $(document).ready(function() {
         $("#media").lightGallery({
-          thumbWidth: undefined,
+          thumbWidth: 80,
           controls: true,
           loop : false,
           download: true,
           counter: true,
           videojs: true,
-          animateThumb: true
+          animateThumb: true,
+          exThumbImage: 'data-exthumbimage',
         });
 
         var firstLoad = true;

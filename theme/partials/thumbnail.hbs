@@ -7,29 +7,29 @@
     data-sub-html="{{meta.caption}}"
     data-download-url="{{relative urls.download}}"
     
+    data-exthumbimage="{{relative urls.thumbnail}}"
     data-filename="{{filename}}"
 
     {{#if meta.exif}}
-      data-datetimeoriginal="{{meta.exif.DateTimeOriginal}}"
-      data-fnumber="{{meta.exif.FNumber}}"
-      data-exposuretime="{{meta.exif.ExposureTime}}"
-      data-isospeedratings="{{meta.exif.ISO}}"
-      data-focallength="{{meta.exif.FocalLength}}"
-      data-lens="{{meta.exif.Lens}}"
-      data-model="{{meta.exif.Model}}"
-      data-make="{{meta.exif.Make}}"
-      data-gpslatitude="{{meta.exif.GPSLatitude}}"
-      data-gpslongitude="{{meta.exif.GPSLongitude}}"
-      data-gpslatituderef="{{meta.exif.GPSLatitudeRef}}"
-      data-gpslongituderef="{{meta.exif.GPSLongitudeRef}}"
-      data-gpsaltitude="{{meta.exif.GPSAltitude}}"
+        data-datetimeoriginal="{{meta.exif.DateTimeOriginal}}"
+        data-fnumber="{{meta.exif.FNumber}}"
+        data-exposuretime="{{meta.exif.ExposureTime}}"
+        data-isospeedratings="{{meta.exif.ISO}}"
+        data-focallength="{{meta.exif.FocalLength}}"
+        data-lens="{{meta.exif.Lens}}"
+        data-model="{{meta.exif.Model}}"
+        data-make="{{meta.exif.Make}}"
+        data-gpslatitude="{{meta.exif.GPSLatitude}}"
+        data-gpslongitude="{{meta.exif.GPSLongitude}}"
+        data-gpslatituderef="{{meta.exif.GPSLatitudeRef}}"
+        data-gpslongituderef="{{meta.exif.GPSLongitudeRef}}"
+        data-gpsaltitude="{{meta.exif.GPSAltitude}}"
     {{/if}}
-  >
-  <a href="{{relative urls.download}}">
-    <img src="{{relative urls.thumbnail}}"
-          alt="{{filename}}" />
-  </a>
-  {{#if meta.animated}}
-    <img class="video-overlay" src="{{relative 'public/play.png'}}" />
-  {{/if}}
+    <a href="{{relative urls.large}}">
+    <img src="{{relative urls.rectangularThumbnails}}"
+        alt="{{filename}}" />
+    </a>
+    {{#compare meta.animated "||" isVideo}}
+        <img class="video-overlay" src="{{relative 'public/play.png'}}" />
+    {{/compare}}
 </div>
