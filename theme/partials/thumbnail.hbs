@@ -3,9 +3,14 @@
 --}}
 
 <div class="albumList"
-    data-src="{{relative urls.large}}"
     data-sub-html="{{meta.caption}}"
     data-download-url="{{relative urls.download}}"
+
+    {{~#if isVideo~}}
+        data-html="#media{{id}}"
+    {{~else~}}
+        data-src="{{relative urls.large}}"
+    {{~/if~}}
     
     data-exthumbimage="{{relative urls.thumbnail}}"
     data-filename="{{filename}}"
@@ -25,11 +30,19 @@
         data-gpslongituderef="{{meta.exif.GPSLongitudeRef}}"
         data-gpsaltitude="{{meta.exif.GPSAltitude}}"
     {{/if}}
+>
+
+    {{~#if isVideo~}}
+    <a href="{{relative urls.download}}">
+    {{~else~}}
     <a href="{{relative urls.large}}">
-    <img src="{{relative urls.rectangularThumbnails}}"
-        alt="{{filename}}" />
+    {{~/if~}}
+        <img src="{{relative urls.rectangularThumbnails}}" alt="{{filename}}" />
     </a>
+
     {{#compare meta.animated "||" isVideo}}
-        <img class="video-overlay" src="{{relative 'public/play.png'}}" />
+        <div class="video-overlay">
+            <img src="{{relative 'public/play.png'}}" />
+        </div>
     {{/compare}}
 </div>
