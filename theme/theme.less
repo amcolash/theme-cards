@@ -164,21 +164,18 @@ nav.breadcrumbs a {
 // Photo and video thumbnails
 // -----------------------------------
 
-#media li {
-  float: left;
-  margin-right: 0.4em;
-  margin-bottom: 0.2em;
-  position: relative;
-  cursor: zoom-in;
-}
-
-#media a {
+.albumList, .albumList img {
   display: inline-block;
+  border-radius: 8px;
 }
 
-#media img {
-  border-radius: 8px;
-  display: block;
+.albumList img {
+  height: 225px;
+  margin: 1px;
+}
+
+.albumList a {
+  cursor: zoom-in;
 }
 
 #media li .video-overlay {
@@ -192,12 +189,13 @@ nav.breadcrumbs a {
 }
 
 // -----------------------------------
-// Photo and video thumbnails
+// Fix thumbnail pager
 // -----------------------------------
 
-@media only screen and (max-width: @mobile-trigger) {
-  #albums a {
-    width: 250px;
-    height: 190px;
-  }
-}
+// .lg-outer .lg-thumb-item img {
+//   width: unset;
+// }
+
+// .lg-thumb-item {
+//   width: unset !important;
+// }
