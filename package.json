@@ -14,7 +14,7 @@
   },
   "thumbsup": {
     "themeRoot": "theme",
-    "rectangularThumbnails": true,
+    "rectangularThumbnail": true,
     "defaultThumbnailSize": 250
   }
 }
